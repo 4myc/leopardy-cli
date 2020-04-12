@@ -67,6 +67,7 @@ class CommandLineInterface
             name_input = gets.chomp
             player = Player.create(name: name_input)
 
+            system('clear')
             blank_line(2)
             puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
             blank_line(6)

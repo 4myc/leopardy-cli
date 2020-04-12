@@ -12,8 +12,7 @@ class CommandLineInterface
     def menu
         system('clear')
         # system("printf '\e[8;50;93t'") --> text color
-        blank_line(8)
-        # puts "                                           ..........  WELCOME TO  .........."
+        blank_line(4)
         puts "..................................................   WELCOME TO   .................................................."
         blank_line(4)
         puts "\e[93m       ://:        ://///////. .////////:  ./////////.   ://////:   :////////:   :////////:  ://:   ://. ://:"
@@ -33,12 +32,9 @@ class CommandLineInterface
         blank_line(4)
         puts "...................................................................................................................."
         puts ""
-        # puts "                                               Press Enter to Continue"
-        # blank_line(30)
         # user_input = gets.strip --> .strip removes white space before && after input
         # user_input = gets.chomp  --> .chomp removes white space after input
 
-        # blank_line(15)
         blank_line(2)
         puts "                                             ............................."
         puts "                                                                          "
@@ -55,7 +51,7 @@ class CommandLineInterface
         puts "                                             ............................." 
         puts "                                                 5 /     EXIT             " 
         puts "                                             ............................." 
-        blank_line(8)
+        blank_line(4)
         option
     end
 
@@ -66,17 +62,17 @@ class CommandLineInterface
         while true
             blank_line(4)
             puts "Please enter your name:"
-            print "-->"
+            print "--> "
 
             name_input = gets.chomp
             player = Player.create(name: name_input)
 
             blank_line(2)
-            puts ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+            puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
             blank_line(6)
-            puts "\e[93m                HELLO, [ #{name_input} ]. LET'S PLAY!\e[97m"
+            puts "                HELLO, \e[93m[ #{name_input} ]. \e[97mLET'S PLAY!"
             blank_line(6)
-            puts ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+            puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
             blank_line(2)
             puts "Press Enter to Start"
 
@@ -105,8 +101,7 @@ class CommandLineInterface
         system('clear')
         while true 
         blank_line(4)
-        # puts "...................................................................................................................."
-        puts ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+        puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
         blank_line(8)
         puts "\e[93m                            ROUND 1:"
         puts ""
@@ -129,9 +124,9 @@ class CommandLineInterface
 
         #correct_answer is an array
         correct_answer = round.answers.select {|answer| answer.correct == true}
-        puts ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+        puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
 
-        print "-->"
+        print "--> "
         user_input = gets.chomp.downcase
         selected_answer = ""
         if user_input == "1"
@@ -179,7 +174,7 @@ class CommandLineInterface
 
         while true 
         blank_line(4)
-        puts ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+        puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
         blank_line(8)
         puts "\e[93m                            ROUND 2:"
         puts ""
@@ -200,9 +195,9 @@ class CommandLineInterface
 
         #correct_answer is an array
         correct_answer = round.answers.select {|answer| answer.correct == true}
-        puts ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+        puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
 
-        print "-->"
+        print "--> "
         user_input = gets.chomp.downcase
         selected_answer = ""
         if user_input == "1"
@@ -251,7 +246,7 @@ class CommandLineInterface
         
         while true 
         blank_line(4)
-        puts ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+        puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
         blank_line(8)
         puts "\e[93m                            ROUND 3:"
         puts ""
@@ -272,9 +267,9 @@ class CommandLineInterface
 
         #correct_answer is an array
         correct_answer = round.answers.select {|answer| answer.correct == true}
-        puts ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+        puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
 
-        print "-->"
+        print "--> "
         user_input = gets.chomp.downcase
         selected_answer = ""
         if user_input == "1"
@@ -342,7 +337,7 @@ class CommandLineInterface
         blank_line(4)
         puts "Please enter a player name:"
 
-        print "-->"
+        print "--> "
         name_input = gets.chomp.downcase
         find_player(name_input)
             if @player == nil
@@ -357,18 +352,18 @@ class CommandLineInterface
                 found_player = @player
                 blank_line(2)
                 puts "Please enter a new player name:"
-                print "-->"
+                print "--> "
                 new_player_input = gets.chomp.downcase
 
                 found_player.name = new_player_input
                 found_player.save
                 
                 blank_line(4)
-                puts ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+                puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
                 blank_line(6)
                 puts "            Player \e[93m[ #{name_input} ]\e[97m has been updated to \e[93m[ #{new_player_input} ]\e[97m."
                 blank_line(6)
-                puts ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+                puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
                 blank_line(2)
                 puts "Press Enter to return to Main Menu"
                 
@@ -386,7 +381,7 @@ class CommandLineInterface
         blank_line(4)
         puts "Please enter a player name:"
 
-        print "-->"
+        print "--> "
         name_input = gets.chomp.downcase
         find_player(name_input)
             if @player == nil
@@ -399,11 +394,11 @@ class CommandLineInterface
                 system('clear')
           
                 blank_line(4)
-                puts ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+                puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
                 blank_line(6)
                 puts "            So long! Player \e[93m[ #{name_input} ]\e[97m has been deleted."
                 blank_line(6)
-                puts ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+                puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
                 blank_line(2)
                 puts "Press Enter to return to Main Menu"
 
@@ -416,7 +411,7 @@ class CommandLineInterface
     
     #---------- MENU OPTIONS ----------#
     def option
-        print "-->"
+        print "--> "
         user_input = gets.chomp.downcase
         while user_input != "exit" do 
             if user_input == "1"
@@ -436,7 +431,7 @@ class CommandLineInterface
                 break
             else 
                 puts "ROAR! \e[93m[ #{user_input} ]\e[97m is not an option. Please make another selection."
-                print "-->"
+                print "--> "
                 user_input = gets.chomp
             end 
         end 

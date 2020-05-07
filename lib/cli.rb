@@ -43,13 +43,13 @@ class CommandLineInterface
         puts "                                             ............................."
         puts "                                                 1 /     PLAY!            "        # CREATE --> create a player and start the game
         puts "                                             ............................." 
-        puts "                                                 2 /     LEADERBOARD      "        # READ --> view questions and answers; view scores of players
+        # puts "                                                 2 /     LEADERBOARD      "        # READ --> view questions and answers; view scores of players
+        # puts "                                             ............................." 
+        puts "                                                 2 /     UPDATE PLAYER    "        # UPDATE --> change player name
         puts "                                             ............................." 
-        puts "                                                 3 /     UPDATE PLAYER    "        # UPDATE --> change player name
+        puts "                                                 3 /     DELETE PLAYER    "        # DELETE --> delete player
         puts "                                             ............................." 
-        puts "                                                 4 /     DELETE PLAYER    "        # DELETE --> delete player
-        puts "                                             ............................." 
-        puts "                                                 5 /     EXIT             " 
+        puts "                                                 4 /     EXIT             " 
         puts "                                             ............................." 
         blank_line(4)
         option
@@ -64,20 +64,20 @@ class CommandLineInterface
             puts "Please enter your name:"
             print "--> "
 
-            name_input = gets.chomp
+            name_input = gets.chomp.downcase
             player = Player.create(name: name_input)
 
             system('clear')
             blank_line(2)
-            puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+            puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
             blank_line(6)
             puts "                HELLO, \e[93m[ #{name_input} ]. \e[97mLET'S PLAY!"
             blank_line(6)
-            puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+            puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
             blank_line(2)
             puts "Press Enter to Start"
 
-            user_input = gets.chomp
+            user_input = gets.chomp.downcase
             leopardy_round # Goes to ROUND #1 - Leopardy! screen
           break
         end
@@ -102,17 +102,20 @@ class CommandLineInterface
         system('clear')
         while true 
         blank_line(4)
-        puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
-        blank_line(8)
+        puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+        blank_line(6)
         puts "\e[93m                            ROUND 1:"
         puts ""
         puts "                           LEOPARDY!\e[97m"
         
         #----- ROUND LOOP BEGINS -----#
-        blank_line(6)
+        blank_line(2)
         #Return a random question --> question 
         round = Question.all.sample
-        puts round.clue  #Returns clue object
+        # binding.pry
+        # round = Question.all
+        # question = round.pop
+        # puts question.clue  #Returns clue object
 
 
         puts ""
@@ -121,11 +124,11 @@ class CommandLineInterface
         round.answers.each_with_index do |answer, index|
             puts "  : #{index + 1} :   #{answer.content}"
         end
-        blank_line(8)
+        blank_line(6)
 
         #correct_answer is an array
         correct_answer = round.answers.select {|answer| answer.correct == true}
-        puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+        puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
 
         print "--> "
         user_input = gets.chomp.downcase
@@ -150,7 +153,7 @@ class CommandLineInterface
             # @player.score += 1
             # Display score out of 3, e.g. 1/3
             puts "Press Enter to continue to DOUBLE LEOPARDY!"
-            user_input = gets.chomp
+            user_input = gets.chomp.downcase
             
         double_leopardy_round
         else
@@ -159,7 +162,7 @@ class CommandLineInterface
             puts "\e[93mINCORRECT!\e[97m"
             puts ""
             puts "Press Enter to continue to DOUBLE LEOPARDY!"
-            user_input = gets.chomp
+            user_input = gets.chomp.downcase
         double_leopardy_round
         end
         blank_line(8)
@@ -175,14 +178,14 @@ class CommandLineInterface
 
         while true 
         blank_line(4)
-        puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
-        blank_line(8)
+        puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+        blank_line(6)
         puts "\e[93m                            ROUND 2:"
         puts ""
         puts "                        DOUBLE LEOPARDY!\e[97m"
 
         #----- ROUND LOOP BEGINS -----#
-        blank_line(6)
+        blank_line(2)
         #Return a random question
         round = Question.all.sample
         puts round.clue #Returns clue object
@@ -192,11 +195,11 @@ class CommandLineInterface
         round.answers.each_with_index do |answer, index|
             puts "  : #{index + 1} :   #{answer.content}"
         end
-        blank_line(8)
+        blank_line(6)
 
         #correct_answer is an array
         correct_answer = round.answers.select {|answer| answer.correct == true}
-        puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+        puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
 
         print "--> "
         user_input = gets.chomp.downcase
@@ -217,7 +220,7 @@ class CommandLineInterface
             puts "\e[93mCORRECT!\e[97m"
             puts ""
             puts "Press Enter to continue to FINAL LEOPARDY!"
-            user_input = gets.chomp
+            user_input = gets.chomp.downcase
             # @player.score += 1
             # Display score out of 3, e.g. 1/3
         
@@ -229,7 +232,7 @@ class CommandLineInterface
             puts "\e[93mINCORRECT!\e[97m"
             puts ""
             puts "Press Enter to continue to FINAL LEOPARDY!"
-            user_input = gets.chomp
+            user_input = gets.chomp.downcase
 
         final_leopardy_round
         end
@@ -247,14 +250,14 @@ class CommandLineInterface
         
         while true 
         blank_line(4)
-        puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
-        blank_line(8)
+        puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+        blank_line(6)
         puts "\e[93m                            ROUND 3:"
         puts ""
         puts "                        FINAL LEOPARDY!\e[97m"
 
         #----- ROUND LOOP BEGINS -----#
-        blank_line(6)
+        blank_line(2)
         #Return a random question
         round = Question.all.sample
         puts round.clue #Returns clue object
@@ -264,11 +267,11 @@ class CommandLineInterface
         round.answers.each_with_index do |answer, index|
             puts "  : #{index + 1} :   #{answer.content}"
         end
-        blank_line(8)
+        blank_line(6)
 
         #correct_answer is an array
         correct_answer = round.answers.select {|answer| answer.correct == true}
-        puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+        puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
 
         print "--> "
         user_input = gets.chomp.downcase
@@ -288,8 +291,8 @@ class CommandLineInterface
         if correct_answer[0] == selected_answer
             puts "\e[93mCORRECT!\e[97m"
             puts ""
-            puts "Press Enter to exit game"
-            user_input = gets.chomp
+            puts "Press Enter to exit the game!"
+            user_input = gets.chomp.downcase
             # @player.score += 1
             # Display score out of 3, e.g. 1/3
         
@@ -300,8 +303,8 @@ class CommandLineInterface
             # Display score out of 3, e.g. 1/3
             puts "\e[93mINCORRECT!\e[97m"
             puts ""
-            puts "Press Enter to exit game"
-            user_input = gets.chomp
+            puts "Press Enter to exit the game!"
+            user_input = gets.chomp.downcase
         # break
         end_game
         end
@@ -342,7 +345,7 @@ class CommandLineInterface
         name_input = gets.chomp.downcase
         find_player(name_input)
             if @player == nil
-                puts "No player name found!"
+                puts "\e[93mNo player name found! Please enter another name.\e[97m"
                 # puts "Push Enter to return to Main Menu"
                 # name_input = gets.chomp.downcase
                 # menu
@@ -351,20 +354,21 @@ class CommandLineInterface
                 # option
             else
                 found_player = @player
-                blank_line(2)
+                blank_line(4)
                 puts "Please enter a new player name:"
                 print "--> "
                 new_player_input = gets.chomp.downcase
 
                 found_player.name = new_player_input
                 found_player.save
+                system('clear')
                 
                 blank_line(4)
-                puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+                puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
                 blank_line(6)
                 puts "            Player \e[93m[ #{name_input} ]\e[97m has been updated to \e[93m[ #{new_player_input} ]\e[97m."
                 blank_line(6)
-                puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+                puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
                 blank_line(2)
                 puts "Press Enter to return to Main Menu"
                 
@@ -386,7 +390,7 @@ class CommandLineInterface
         name_input = gets.chomp.downcase
         find_player(name_input)
             if @player == nil
-                puts "No player name found! Please enter another name."
+                puts "\e[93mNo player name found! Please enter another name.\e[97m"
                 
                 # ADD: Give option to go back to MENU
             else
@@ -395,11 +399,11 @@ class CommandLineInterface
                 system('clear')
           
                 blank_line(4)
-                puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+                puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
                 blank_line(6)
-                puts "            So long! Player \e[93m[ #{name_input} ]\e[97m has been deleted."
+                puts "            So long, \e[93m[ #{name_input} ]\e[97m! Your account has been deleted."
                 blank_line(6)
-                puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+                puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
                 blank_line(2)
                 puts "Press Enter to return to Main Menu"
 
@@ -418,22 +422,22 @@ class CommandLineInterface
             if user_input == "1"
                 create_player
                 break
+            # elsif user_input == "2"
+            #     leaderboard
+            #     break
             elsif user_input == "2"
-                leaderboard
-                break
-            elsif user_input == "3"
                 update_player
                 break
-            elsif user_input == "4"
+            elsif user_input == "3"
                 delete_player
                 break
-            elsif user_input == "5"
+            elsif user_input == "4"
                 end_game
                 break
             else 
                 puts "ROAR! \e[93m[ #{user_input} ]\e[97m is not an option. Please make another selection."
                 print "--> "
-                user_input = gets.chomp
+                user_input = gets.chomp.downcase
             end 
         end 
     end 
@@ -442,14 +446,14 @@ class CommandLineInterface
     def end_game
         system('clear')
         blank_line(4)
-        puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+        puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
         blank_line(10)
-        puts "                                                  THANK YOU FOR PLAYING"
+        puts "                                   THANK YOU FOR PLAYING"
         blank_line(2)
-        puts "\e[93m                                                         LEOPARDY!\e[97m"
+        puts "\e[93m                                          LEOPARDY!\e[97m"
 
         blank_line(10)
-        puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+        puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
         blank_line(2)
         puts "Press Enter to return to Main Menu"
 

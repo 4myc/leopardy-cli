@@ -21,10 +21,9 @@ LEOPARDY! is a multiple choice trivia game about leopards, based on the popular 
 1. In the welcome page, make a selection from the main menu. The menu options include: 
     ```bash
     1. PLAY!
-    2. LEADERBOARD
-    3. UPDATE PLAYER
-    4. DELETE PLAYER
-    5. EXIT
+    2. UPDATE PLAYER
+    3. DELETE PLAYER
+    4. EXIT
     ```
 3. To start a game, select PLAY! from the menu and enter a name.
 4. The game starts at the LEOPARDY! round. The first question clue and three multiple choice answers will be generated. Select an answer and it will be revealed to be correct or incorrect.

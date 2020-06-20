@@ -2,7 +2,7 @@
 
 LEOPARDY! is a multiple choice trivia game about leopards, based on the popular trivia game show Jeopardy! and Pup Quiz from The Tonight Show Starring Jimmy Fallon.
 
-## Installation Instructions
+## INSTALLATION
 
 1. Fork and clone this repository.
 2. In the terminal, run:
@@ -16,7 +16,7 @@ LEOPARDY! is a multiple choice trivia game about leopards, based on the popular 
     ruby bin/run.rb
     ```
 
-## How to Play
+## HOW TO USE
 
 1. In the welcome page, make a selection from the main menu. The menu options include: 
     ```bash

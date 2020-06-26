@@ -2,6 +2,8 @@
 
 LEOPARDY! is a multiple choice trivia game about leopards, based on the popular trivia game show Jeopardy! and Pup Quiz from The Tonight Show Starring Jimmy Fallon.
 
+TECHNOLOGIES: Ruby, ActiveRecord  
+
 ## INSTALLATION
 
 1. Fork and clone this repository.

@@ -8,13 +8,17 @@ Ruby, ActiveRecord
 ## Installation
 
 1. Fork and clone this repository.
-2. In the terminal, run:
+2. In the terminal, save the cloned repository to a local folder by running:   
+    ``` bash
+    git clone https://github.com/<github_username>/leopardy-cli
+    ```
+3. Run the following to install the dependencies:
     ```bash 
     bundle install
     rake db:migrate
     rake db:seed
     ```
-5. Once the above steps are done, load the game by running:
+4. Once the above steps are done, load the game by running:
     ```bash 
     ruby bin/run.rb
     ```

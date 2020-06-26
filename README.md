@@ -1,10 +1,11 @@
-# Welcome to LEOPARDY!
+# WELCOME TO LEOPARDY!
 
 LEOPARDY! is a multiple choice trivia game about leopards, based on the popular trivia game show Jeopardy! and Pup Quiz from The Tonight Show Starring Jimmy Fallon.
 
-TECHNOLOGIES: Ruby, ActiveRecord  
+## Technologies 
+Ruby, ActiveRecord  
 
-## INSTALLATION
+## Installation
 
 1. Fork and clone this repository.
 2. In the terminal, run:
@@ -18,7 +19,7 @@ TECHNOLOGIES: Ruby, ActiveRecord
     ruby bin/run.rb
     ```
 
-## HOW TO USE
+## Usage
 
 1. In the welcome page, make a selection from the main menu. The menu options include: 
     ```bash

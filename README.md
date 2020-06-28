@@ -1,6 +1,10 @@
 # WELCOME TO LEOPARDY!
 
-LEOPARDY! is a multiple choice trivia game about leopards inspired by the popular trivia game show Jeopardy! and Pup Quiz from The Tonight Show Starring Jimmy Fallon.
+LEOPARDY! is a multiple choice trivia game about leopards inspired by the popular trivia game show Jeopardy! and Pup Quiz from The Tonight Show Starring Jimmy Fallon.  
+
+USER STORIES:  
+User can view question clues  
+User can create, update, and delete an account  
 
 ## Technologies 
 Ruby, ActiveRecord  

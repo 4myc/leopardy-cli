@@ -1,6 +1,6 @@
 # WELCOME TO LEOPARDY!
 
-LEOPARDY! is a multiple choice trivia game about leopards inspired by the popular trivia game show Jeopardy! and Pup Quiz from The Tonight Show Starring Jimmy Fallon.  
+LEOPARDY! is a multiple-choice trivia game that tests your knowledge about leopards. It was inspired by the popular trivia game show Jeopardy! and Pup Quiz from The Tonight Show Starring Jimmy Fallon.  
 
 USER STORIES:  
 User can view question clues  

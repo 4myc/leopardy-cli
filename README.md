@@ -16,13 +16,13 @@ Ruby, ActiveRecord
     ``` bash
     git clone https://github.com/<github_username>/leopardy-cli
     ```
-3. Run the following to install the dependencies:
+3. Inside the cloned repository folder in the terminal, run the following to install the dependencies:
     ```bash 
     bundle install
     rake db:migrate
     rake db:seed
     ```
-4. Once the above steps are done, load the game by running:
+4. Load the game by running:
     ```bash 
     ruby bin/run.rb
     ```

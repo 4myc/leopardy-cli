@@ -14,7 +14,7 @@ Ruby, ActiveRecord
 1. Fork and clone this repository.
 2. In the terminal, save the cloned repository to a local folder by running:   
     ``` bash
-    git clone https://github.com/<github_username>/leopardy-cli
+    git clone <repo_url>
     ```
 3. Inside the cloned repository folder in the terminal, run the following to install the dependencies:
     ```bash 

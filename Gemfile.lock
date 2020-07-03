@@ -50,7 +50,7 @@ GEM
     sinatra-activerecord (2.0.14)
       activerecord (>= 3.2)
       sinatra (>= 1.0)
-    sqlite3 (1.4.1)
+    sqlite3 (1.4.2)
     thread_safe (0.3.6)
     tilt (2.0.10)
     tzinfo (1.2.5)
@@ -69,7 +69,7 @@ DEPENDENCIES
   require_all
   rest-client
   sinatra-activerecord
-  sqlite3 (~> 1.4.0)
+  sqlite3 (~> 1.4.2)
 
 BUNDLED WITH
    1.17.3

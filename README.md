@@ -6,10 +6,10 @@ USER STORIES:
 User can view question clues  
 User can create, update, and delete an account  
 
-<img src="screenshots/leopardy_home.png" width="600px" >  
-<img src="screenshots/leopardy_round1.png" width="600px" >  
-<img src="screenshots/leopardy_round2.png" width="600px" >  
-<img src="screenshots/leopardy_round3.png" width="600px" >  
+<img src="screenshots/leopardy_home.png" width="800px" >  
+<img src="screenshots/leopardy_round1.png" width="800px" >  
+<img src="screenshots/leopardy_round2.png" width="800px" >  
+<img src="screenshots/leopardy_round3.png" width="800px" >  
 
 ## Technologies 
 Ruby, ActiveRecord  

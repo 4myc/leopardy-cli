@@ -2,6 +2,11 @@
 
 LEOPARDY! is a multiple choice trivia game about leopards, based on the popular trivia game show Jeopardy! and Pup Quiz from The Tonight Show Starring Jimmy Fallon.
 
+<img src="screenshots/leopardy_home.png" width="600px" >  
+<img src="screenshots/leopardy_round1.png" width="600px" >  
+<img src="screenshots/leopardy_round2.png" width="600px" >  
+<img src="screenshots/leopardy_round3.png" width="600px" >  
+
 ## Installation Instructions
 
 1. Fork and clone this repository.

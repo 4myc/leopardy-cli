@@ -110,17 +110,12 @@ class CommandLineInterface
         
         #----- ROUND LOOP BEGINS -----#
         blank_line(2)
-        #Return a random question --> question 
+        #Return a random question
         round = Question.all.sample
-        # binding.pry
-        # round = Question.all
-        # question = round.pop
-        # puts question.clue  #Returns clue object
-
-
+        puts round.clue #Returns clue object
         puts ""
 
-        #Return answers as numbered strings
+        #Return answers as strings
         round.answers.each_with_index do |answer, index|
             puts "  : #{index + 1} :   #{answer.content}"
         end

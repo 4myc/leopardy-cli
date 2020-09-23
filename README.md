@@ -6,13 +6,13 @@ USER STORIES:
 User can view question clues  
 User can create, update, and delete an account  
 
+## Technologies 
+Ruby, ActiveRecord  
+
 <img src="screenshots/leopardy_home.png" width="800px" >  
 <img src="screenshots/leopardy_round1.png" width="800px" >  
 <img src="screenshots/leopardy_round2.png" width="800px" >  
 <img src="screenshots/leopardy_round3.png" width="800px" >  
-
-## Technologies 
-Ruby, ActiveRecord  
 
 ## Installation
 

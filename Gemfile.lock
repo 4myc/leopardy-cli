@@ -36,7 +36,7 @@ GEM
     rack (2.2.3)
     rack-protection (2.0.8.1)
       rack
-    rake (13.0.1)
+    rake (13.0.4)
     require_all (3.0.0)
     rest-client (2.1.0)
       http-accept (>= 1.7.0, < 2.0)
